@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{
+   /* ### Primary*/
+
+--Desaturated-Red: hsl(0, 36%, 70%);
+ --Soft-Red: hsl(0, 93%, 68%);
+
+/*### Neutral*/
+
+--Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+/*### Gradients*/
+
+ --Linear-grad1:(35deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%));
+--Linear-grad2: (135deg, from 
+hsl(0, 80%, 86%), to hsl(0, 74%, 74%));
+/*fonts*/
+--family:'Josefin Sans', sans-serif;
+--lightest:300;
+--light:400;
+--bold:600;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 100vh;
+    font-family: var(--family);
+}
+.container-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero-img{
+    display: none;
+}
+.logo{
+    width:20%;
+    height: auto;
+    margin: 20px 0px 25px 0px;
+}
+.hero-img-m{
+    height: auto;
+}
+.container-content{
+    background-color: var(--Linear-grad2);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.intro{
+    text-align: center;
+    max-width: 350px;
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+span{
+    color: var(--Desaturated-Red);
+    font-weight: var(--lightest)
+}
+h1{
+    color: var(--Dark-Grayish-Red);
+    font-weight: var(--bold);
+    line-height: 3rem;
+    letter-spacing: 0.5rem;
+}
+p{
+    font-weight:  var(--light);
+    color: var(--Desaturated-Red);
+
+}
+form {
+    padding:12px;
+    display: flex;
+    margin-right: 20px;
+    flex-direction: row-reverse;
+    outline: none !important;
+}
+input {
+ max-width: 400px;
+        background-color: transparent;
+        border-radius: 50px;
+        border: 1px solid var(--Desaturated-Red);
+        font-family: inherit;
+        font-size: 15px;
+        padding: 15px;
+        left: 18%;
+        position: absolute;
+}
+form > img {
+    position: absolute;
+    top: 10px;
+    right: 110px;
+    visibility: hidden;
+}
+small {
+    position: absolute;
+    left: 15px;
+    bottom: -20px;
+    color: var(-);
+    visibility: hidden;
+}
+input::placeholder {
+    color: var(--Desaturated-Red);
+}
+input:focus {
+    outline-color: var(--Desaturated-Red);
+}
+.error input {
+    border: 1px solid var(--Soft-Red);
+    visibility: visible;
+}
+.error small {
+    visibility: visible;
+    color: var(--Soft-Red);
+    position: absolute;
+    top: 85%;
+    left:20%;
+}
+.error img {
+    visibility: visible;
+    
+}
+
+.success small {
+    visibility: hidden;
+}
+.success input {
+    border: 1px solid green;
+}
+button{
+    top: 0;
+    height: auto;
+    left: 0;
+    padding: 18px 45px;
+    background: var(--Soft-Red);
+    border-radius: 50px;
+    border: 0;
+
+
+}
+button:hover{
+    transition: 0.2s;
+    cursor:pointer;
+    background-color: hsl(0, 74%, 74%);
+}
+
+/*media queries*/
+@media only screen and (min-width: 992px){
+    .hero-img-m{
+        display: none;
+    }
+    .hero-img{
+        display: block;
+    }
+    main{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+   
+    .intro{
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+        line-height: 1.5rem;
+    }
+    .intro p{
+        width:400px;
+        font-weight: var(--lightest);
+    }
+    #email  {
+    color: var(--Desaturated-Red);
+    padding: 20px;
+    width: 100%;
+        
+    }
+    button{
+        position: absolute;
+        top: 78%;
+        height: auto;
+        left: 40%;
+        padding: 18px 45px;
+        background: var(--Soft-Red);
+        border-radius: 50px;
+        border: 0;
+        
+    }
+    h1{
+        font-size: 3.5rem;
+        letter-spacing: 1rem;
+        line-height: 4rem;
+    }
+}
